@@ -1,0 +1,30 @@
+.news-card {
+ background: linear-gradient(135deg, #f0f7f4, #e6e2f8);
+ border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.news-card i {
+  font-size: 2.5rem;
+}
+
+.read-btn {
+  margin-top: 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.read-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}

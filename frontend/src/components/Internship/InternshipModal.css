@@ -1,0 +1,162 @@
+.internship-modal {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #212529;
+  font-size: 0.9rem; 
+  line-height: 1.6;
+}
+
+/* Modal Box */
+.internship-modal .modal-content {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+/* Header */
+.internship-modal .modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.internship-modal .modal-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ✅ Corrected Close button (Bootstrap v5 uses .btn-close) */
+.internship-modal .modal-header .btn-close {
+  filter: invert(1); /* makes it white */
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+.internship-modal .modal-header .btn-close:hover {
+  opacity: 1;
+}
+
+/* Body */
+.internship-modal .modal-body {
+  padding: 1.4rem;
+  max-height: 70vh;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+}
+
+/* Section titles */
+.internship-modal .section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-dark, #0d6efd);
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+.internship-modal .section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2rem;
+  height: 2px;
+  background-color: currentColor;
+  opacity: 0.3;
+}
+
+/* Section content */
+.internship-modal .section-content,
+.internship-modal .clean-list li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #495057;
+  margin-bottom: 0.6rem;
+}
+
+.internship-modal .clean-list {
+  padding-left: 1rem;
+  margin: 0;
+}
+
+/* Details */
+.internship-modal .detail-item {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+}
+.internship-modal .detail-label {
+  font-weight: 600;
+  color: var(--primary-dark, #0d6efd);
+  min-width: 100px;
+  font-size: 0.9rem;
+}
+.internship-modal .detail-value {
+  color: #495057;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+/* Apply button */
+.internship-modal .apply-btn {
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.internship-modal .apply-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+.internship-modal.fade .modal-dialog {
+  transform: translateY(-20px);
+  transition: transform 0.3s ease-in-out;
+}
+.internship-modal.show .modal-dialog {
+  transform: translateY(0);
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .internship-modal .modal-dialog {
+    margin: 0.5rem;
+  }
+
+  .internship-modal .modal-header {
+    padding: 1rem;
+  }
+
+  .internship-modal .modal-title {
+    font-size: 1rem;
+  }
+
+  .internship-modal .modal-body {
+    padding: 1rem;
+    max-height: 78vh;
+  }
+
+  .internship-modal .section-title {
+    font-size: 0.85rem;
+  }
+
+  .internship-modal .section-content,
+  .internship-modal .clean-list li,
+  .internship-modal .detail-label,
+  .internship-modal .detail-value {
+    font-size: 0.85rem;
+  }
+
+  .internship-modal .apply-btn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}

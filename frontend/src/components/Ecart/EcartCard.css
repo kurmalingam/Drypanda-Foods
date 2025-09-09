@@ -1,0 +1,27 @@
+.ecart-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.ecart-card:hover {
+  transform: scale(1.05);
+}
+.ecart-img {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.in-stock {
+  color: green;
+  font-weight:lighter;
+}
+.out-of-stock {
+  color: red;
+  font-weight: lighter;
+}

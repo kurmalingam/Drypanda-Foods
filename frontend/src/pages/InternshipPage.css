@@ -1,0 +1,30 @@
+.internship-page {
+  width: 100%;
+  z-index: 1050;
+  padding: 20px;
+}
+#marquee {
+  width: 100%;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.page-header {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px 15px;
+}
+.internships{
+    padding: 20px;
+    padding-bottom: 0;
+}
+footer {
+  background: linear-gradient(90deg, #7d3c99, #28a745);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
