@@ -56,9 +56,7 @@ const Ecart = () => {
     let message = "Hello! I want to order:\n";
 
     cartItems.forEach((item) => {
-      message += `- ${item.name} x ${item.count} = $${
-        item.price * item.count
-      }\n`;
+      message += `- ${item.name} x ${item.count} = $${item.price * item.count}\n`;
     });
 
     const total = cartItems.reduce(
@@ -75,13 +73,11 @@ const Ecart = () => {
     );
   };
 
-  
-
   return (
     <div className="ecart-full-body">
       <nav className="navbar navbar-expand-lg fixed-top navbar-dark main-navbar">
         <div className="container-fluid">
-          <Link to="/" className="navbar-brand d-flex align-items-center">
+          <Link to="" className="navbar-brand d-flex align-items-center">
             <img
               src="/images/Logo.jpg"
               alt="Dry Pandas Logo"
@@ -104,16 +100,16 @@ const Ecart = () => {
 
           <div className="collapse navbar-collapse" id="navbarContent">
             <ul className="navbar-nav mx-auto gap-lg-3 align-items-center">
+              {/* Dropdown for categories */}
               <li className="nav-item dropdown ecart-dropdown">
-                <a
+                <button
                   className="nav-link dropdown-toggle no-underline"
-                  href="#"
-                  role="button"
+                  type="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Category ▾
-                </a>
+                  {selectedCategory} ▾
+                </button>
                 <ul className="dropdown-menu custom-dropdown">
                   <li>
                     <button
@@ -172,6 +168,7 @@ const Ecart = () => {
           </div>
         </div>
       </nav>
+
       <div className="stock-filter">
         <input
           type="checkbox"
@@ -206,6 +203,7 @@ const Ecart = () => {
         </div>
       </footer>
 
+      {/* Cart Drawer */}
       <div className={`cart-overlay ${cartOpen ? "show" : ""}`}>
         <div className="cart-panel">
           <div className="cart-header d-flex justify-content-between align-items-center">
