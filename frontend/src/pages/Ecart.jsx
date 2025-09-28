@@ -56,7 +56,9 @@ const Ecart = () => {
     let message = "Hello! I want to order:\n";
 
     cartItems.forEach((item) => {
-      message += `- ${item.name} x ${item.count} = $${item.price * item.count}\n`;
+      message += `- ${item.name} x ${item.count} = $${
+        item.price * item.count
+      }\n`;
     });
 
     const total = cartItems.reduce(
