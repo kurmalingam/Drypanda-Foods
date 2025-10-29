@@ -1,6 +1,6 @@
 import './EcartCard.css';
 
-const EcartCard = ({ name, category, price, stock, image , onAddToCart }) => {
+const EcartCard = ({ name, category, price, stock, image, onAddToCart }) => {
   return (
     <div className="ecart-card">
       <img src={image} alt={name} className="ecart-img" />

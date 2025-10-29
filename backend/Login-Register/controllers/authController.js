@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const axios = require('axios');
 
@@ -28,17 +28,34 @@ const registerUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
+  console.time('loginTotal');
   const { email, password, role } = req.body;
 
+  console.time('findUser');
   const user = await User.findOne({ email });
-  if (!user) return res.status(404).json({ success: false, message: 'User not found' });
+  console.timeEnd('findUser');
+  if (!user) {
+    console.timeEnd('loginTotal');
+    return res.status(404).json({ success: false, message: 'User not found' });
+  }
 
-  if (user.regType !== role) return res.status(401).json({ success: false, message: 'Invalid role' });
+  if (user.regType !== role) {
+    console.timeEnd('loginTotal');
+    return res.status(401).json({ success: false, message: 'Invalid role' });
+  }
 
+  console.time('bcryptCompare');
   const isMatch = await bcrypt.compare(password, user.password);
-  if (!isMatch) return res.status(401).json({ success: false, message: 'Incorrect password' });
+  console.timeEnd('bcryptCompare');
+  if (!isMatch) {
+    console.timeEnd('loginTotal');
+    return res.status(401).json({ success: false, message: 'Incorrect password' });
+  }
 
+  console.time('jwtSign');
   const token = jwt.sign({ id: user._id, role: user.regType }, process.env.JWT_SECRET, { expiresIn: '1d' });
+  console.timeEnd('jwtSign');
+  console.timeEnd('loginTotal');
   res.json({ success: true, token, user: { id: user._id, username: user.username, role: user.regType } });
 };
 

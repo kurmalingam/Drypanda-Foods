@@ -7,10 +7,8 @@ import products from "../components/Ecart/EcartData";
 const Ecart = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
-
   const [searchTerm, setSearchTerm] = useState("");
   const [showInStockOnly, setShowInStockOnly] = useState(false);
-
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredProducts = products.filter(
@@ -52,13 +50,10 @@ const Ecart = () => {
     if (cartItems.length === 0) return;
 
     const phoneNumber = "1234567890"; // Replace with your WhatsApp number
-
     let message = "Hello! I want to order:\n";
 
     cartItems.forEach((item) => {
-      message += `- ${item.name} x ${item.count} = $${
-        item.price * item.count
-      }\n`;
+      message += `- ${item.name} x ${item.count} = $${item.price * item.count}\n`;
     });
 
     const total = cartItems.reduce(
@@ -68,11 +63,7 @@ const Ecart = () => {
     message += `Total: $${total}`;
 
     const encodedMessage = encodeURIComponent(message);
-
-    window.open(
-      `https://wa.me/${phoneNumber}?text=${encodedMessage}`,
-      "_blank"
-    );
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
   };
 
   return (

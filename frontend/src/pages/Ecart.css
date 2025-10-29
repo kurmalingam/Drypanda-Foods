@@ -1,31 +1,28 @@
-.ecart-full-body{
+.ecart-full-body {
   width: 100%;
   margin: 0;
   padding: 0;
   height: 100vh;
-}
-.custom-dropdown {
-  background-color: #1e3a2c; 
-  border: none;
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-.ecart-dropdown .dropdown-menu li a{
-  margin-top: 0.5rem; 
-  left: auto; 
-  right: 0;  
-  list-style: none !important;
 }
 
 .custom-dropdown {
   background-color: #1e3a2c;
   border: none;
   border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+.ecart-dropdown .dropdown-menu li a {
+  margin-top: 0.5rem;
+  left: auto;
+  right: 0;
+  list-style: none !important;
+}
+
 .custom-dropdown .dropdown-item {
-  color:black;
+  color: black;
 }
+
 .custom-dropdown .dropdown-item:hover {
   background: #28a745;
   color: #fff;
@@ -36,12 +33,14 @@
   display: flex;
   align-items: center;
 }
+
 .search-box input {
   border-radius: 20px;
   padding-right: 35px;
   height: 35px;
   font-size: 0.9rem;
 }
+
 .search-box .search-icon {
   position: absolute;
   right: 12px;
@@ -59,6 +58,7 @@
   display: flex;
   align-items: center;
 }
+
 .btn-ecart:hover {
   background: #a3e635;
   color: #1e3a2c;
@@ -73,20 +73,21 @@
 
 @media (max-width: 991px) {
   .login-wrapper {
-    flex-direction: column;   
-    width: 100%;              
+    flex-direction: column;
+    width: 100%;
     margin-top: 1rem;
   }
 
   .login-wrapper .btn {
-    width: 80%;               
+    width: 80%;
     justify-content: center;
   }
 }
-.stock-filter{
+
+.stock-filter {
   padding-top: 80px;
   width: 100%;
-  color:brown;
+  color: brown;
   text-align: center;
 }
 
@@ -94,17 +95,18 @@
   width: 100%;
   padding: 2rem;
   display: flex;
-  flex-wrap: wrap;          
-  justify-content: center;  
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 40px;
 }
+
 .cart-overlay {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: none;
   z-index: 1050;
 }
@@ -117,11 +119,11 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 350px;        
+  width: 350px;
   height: 100%;
   background: #fff;
   padding: 1rem;
-  box-shadow: -4px 0 12px rgba(0,0,0,0.3);
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
 }
@@ -141,16 +143,16 @@
   overflow-y: auto;
   text-align: center;
 }
+
 .cart-item {
   border-bottom: 1px solid #ddd;
   padding-bottom: 8px;
 }
+
 .cart-item:last-child {
   border-bottom: none;
 }
+
 .cart-body button {
   min-width: 30px;
 }
-
-
-
