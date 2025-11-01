@@ -1,8 +1,8 @@
 import './EcartCard.css';
 
-const EcartCard = ({ name, category, price, stock, image, onAddToCart }) => {
+const EcartCard = ({ name, category, price, stock, image, onAddToCart, onCardClick }) => {
   return (
-    <div className="ecart-card">
+    <div className="ecart-card" onClick={onCardClick}>
       <img src={image} alt={name} className="ecart-img" />
       <h5>{name}</h5>
       <p className="category">{category}</p>
@@ -15,7 +15,10 @@ const EcartCard = ({ name, category, price, stock, image, onAddToCart }) => {
       <button
         className="btn btn-success"
         disabled={!stock}
-        onClick={onAddToCart}
+        onClick={(e) => {
+          e.stopPropagation(); // Prevent card click when button is clicked
+          onAddToCart();
+        }}
         aria-disabled={!stock}
         aria-label={stock ? `Add ${name} to cart` : `${name} out of stock`}
       >

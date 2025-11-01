@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Ecart.css";
 import EcartCard from "../components/Ecart/EcartCard";
+import ProductDetailModal from "../components/Ecart/ProductDetailModal";
 import products from "../components/Ecart/EcartData";
 
 const Ecart = () => {
@@ -10,6 +11,8 @@ const Ecart = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showInStockOnly, setShowInStockOnly] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const filteredProducts = products.filter(
     (item) =>
@@ -64,6 +67,16 @@ const Ecart = () => {
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+  };
+
+  const handleCardClick = (product) => {
+    setSelectedProduct(product);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedProduct(null);
   };
 
   return (
@@ -178,6 +191,7 @@ const Ecart = () => {
               key={index}
               {...item}
               onAddToCart={() => handleAddToCart(item)}
+              onCardClick={() => handleCardClick(item)}
             />
           ))
         ) : (
@@ -253,6 +267,14 @@ const Ecart = () => {
           </div>
         </div>
       </div>
+
+      {/* Product Detail Modal */}
+      <ProductDetailModal
+        product={selectedProduct}
+        isOpen={modalOpen}
+        onClose={handleCloseModal}
+        onAddToCart={handleAddToCart}
+      />
     </div>
   );
 };
