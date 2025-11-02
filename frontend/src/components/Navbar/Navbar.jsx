@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const handleNavLinkClick = () => {
+    const navbarCollapse = document.getElementById("navbarContent");
+    if (window.innerWidth < 992 && navbarCollapse?.classList.contains("show")) {
+      document.querySelector(".navbar-toggler")?.click();
+    }
+  };
   return (
     <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark-green main-navbar">
       <div className="container-fluid">
@@ -32,37 +38,43 @@ const Navbar = () => {
             <a
               className="nav-link px-3"
               href="#product-details"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarContent"
+              onClick={handleNavLinkClick}
+              // data-bs-toggle="collapse"
+              // data-bs-target="#navbarContent"
             >
               Product Details
             </a>
             <a
               className="nav-link px-3"
               href="#newsroom-section"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarContent"
+              onClick={handleNavLinkClick}
+              // data-bs-toggle="collapse"
+              // data-bs-target="#navbarContent"
             >
               News Room
             </a>
             <a
               className="nav-link px-3"
               href="#careers"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarContent"
+              onClick={handleNavLinkClick}
+              // data-bs-toggle="collapse"
+              // data-bs-target="#navbarContent"
             >
               Careers
             </a>
             <a
               className="nav-link px-3"
               href="#about-section"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarContent"
+              onClick={handleNavLinkClick}
+
+              // data-bs-toggle="collapse"
+              // data-bs-target="#navbarContent"
             >
               About Us
             </a>
             <a
               className="nav-link px-2"
+              onClick={handleNavLinkClick}
               data-bs-toggle="modal"
               data-bs-target="#contactModal"
             >
